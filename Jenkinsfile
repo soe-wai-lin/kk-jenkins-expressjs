@@ -47,7 +47,7 @@ pipeline {
         
         stage('owasp') {
             steps {
-                dependencyCheck additionalArguments: '''--scan express-repo/examples/hello-world
+                dependencyCheck additionalArguments: '''--scan /home/sysadmin/workspace/essjs-org_kk-expressjs_expressjs/
                 --format XML''', odcInstallation: 'OWASP-DepCheck-10'
             }
         }
