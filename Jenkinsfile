@@ -10,6 +10,12 @@ pipeline {
     }
 
     stages {
+        stage('checkout') {
+            steps {
+                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/soe-wai-lin/kk-jenkins-expressjs.git']])
+            }
+        }
+        
         stage('Install dependencies') {
             steps {
                 sh 'npm install'
