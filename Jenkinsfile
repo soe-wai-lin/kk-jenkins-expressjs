@@ -39,7 +39,7 @@ pipeline {
 
 
         
-        stage('NPM test') {
+        stage('owasp') {
             steps {
                 dependencyCheck additionalArguments: '''--scan express-repo/examples/hello-world
                 --format XML''', odcInstallation: 'OWASP-DepCheck-10'
