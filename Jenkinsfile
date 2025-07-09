@@ -40,9 +40,8 @@ pipeline {
 
         stage('OWASP Depencies Check') {
             steps {
-                ddependencyCheck additionalArguments: '''
-                  --scan express-repo/examples/hello-world
-                  --format XML''', odcInstallation: 'OWASP Dependency Check'
+                dependencyCheck additionalArguments: '''--scan	express-repo/examples/hello-world
+                --format	XML''', odcInstallation: 'OWASP-DepCheck-10'
             }
         }
     }
